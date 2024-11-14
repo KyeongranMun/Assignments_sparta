@@ -1,9 +1,12 @@
+package lv3;
+
 import java.util.Scanner;
 
 public class CalculatorApp {
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        Calculator calculator = new Calculator();
+
 
         while (true) {
             System.out.print("숫자를 입력하세요 : ");
@@ -20,24 +23,7 @@ public class CalculatorApp {
             System.out.print("숫자를 입력하세요 : ");
             int num2 = sc.nextInt();
 
-            int result;
-
-            switch (operator) {
-                case "-" -> result = num1 - num2;
-                case "+" -> result = num1 + num2;
-                case "*" -> result = num1 * num2;
-                case "/" -> {
-                    if (num2 == 0) {
-                        System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
-                        continue;
-                    }
-                    result = num1 / num2;
-                }
-                default -> {
-                    System.out.println("잘못된 연산자 입니다. 다시 입력해주세요.");
-                    continue;
-                }
-            }
+            int result = calculator.calculate(num1, num2, operator); //calculate 함수 호출
             System.out.println(num1 + operator + num2 + " = " + result);
         }
         sc.close();
