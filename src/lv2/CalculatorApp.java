@@ -7,9 +7,6 @@ public class CalculatorApp {
         Scanner sc = new Scanner(System.in);
         Calculator calculator = new Calculator();
 
-        //getter
-        //setter
-
         while (true) {
             System.out.println("계산을 시작하시겠습니까? Yes or No : ");
             String input = sc.next();
@@ -31,7 +28,7 @@ public class CalculatorApp {
 
             int result = calculator.calculate(num1, num2, operator); //calculate 함수 호출
             System.out.println(num1 + operator + num2 + " = " + result);
-            System.out.println("계산 기록 : " + calculator.history());
+            System.out.println("계산 기록 : " + calculator.getHistory());
         }
         sc.close();
     }
