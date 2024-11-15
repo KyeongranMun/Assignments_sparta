@@ -15,7 +15,7 @@ public class CalculatorApp {
                 break;
             } else if (!input.equalsIgnoreCase("Yes")) {
                 System.out.println("잘못된 입력입니다. Yes 혹은 No만 입력할 수 있습니다.");
-                continue; //잘못된 입력일 경우 프로그램 처음부터 다시 실행
+                continue; //예외 3
             }
             System.out.print("숫자를 입력하세요 : ");
             int num1 = sc.nextInt();
@@ -28,9 +28,9 @@ public class CalculatorApp {
 
             int result = calculator.calculate(num1, num2, operator); //calculate 함수 호출
             System.out.println(num1 + operator + num2 + " = " + result);
-            System.out.println("계산 기록 : " + calculator.getHistory());
+            System.out.println("계산 기록 : " + calculator.getHistory());//getHistory 메서드를 사용해 기록 조회
+            sc.close();
         }
-        sc.close();
     }
 }
 
