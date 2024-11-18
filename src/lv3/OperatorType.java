@@ -6,22 +6,22 @@ public enum OperatorType { //enum 열거형
     MULTIPLY("*"),
     DIVIDE("/");
 
-    private final String symbol;
+    private final String sign;
 
-    OperatorType(String symbol) {
-        this.symbol = symbol;
+    OperatorType(String sign) {
+        this.sign = sign;
     }
 
-    public String getSymbol() {
-        return symbol;
+    public String getSign() {
+        return sign;
     }
     //연산자 기호로 Enum타입 반환
-    public static OperatorType fromSymbol(String symbol) {
-        for (OperatorType type : values()) {
-            if (type.getSymbol().equals(symbol)) {
+    public static OperatorType fromSign(String sign) {
+        for (OperatorType type : values()) { //사용자가 입력한 연산기호와 일치할 때 열거 상수 반환
+            if (type.getSign().equals(sign)) {
                 return type;
             }
         }
-        throw new IllegalArgumentException("잘못된 연산자 입력입니다 : ");
+        throw new IllegalArgumentException("잘못된 연산자 입력입니다 : ");//배열 순회 후 일치하는 열거 상수가 없으면 예외를 던짐
     }
 }

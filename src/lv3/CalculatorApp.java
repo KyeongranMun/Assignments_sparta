@@ -24,7 +24,7 @@ public class CalculatorApp {
 
                 System.out.print("연산자를 입력하세요 (+, -, *, /): ");
                 String operatorInput = sc.next();
-                OperatorType operator = OperatorType.fromSymbol(operatorInput);
+                OperatorType operator = OperatorType.fromSign(operatorInput);
 
                 System.out.print("두 번째 숫자를 입력하세요: ");
                 double num2 = sc.nextDouble();

@@ -9,19 +9,19 @@ public class ArithmeticCalculator<T extends Number> {
 
     //계산 메서드 제네릭 구현
     public double calculate(T num1, T num2, OperatorType operator) {
-        double operand1 = num1.doubleValue();
-        double operand2 = num2.doubleValue();
+        double dnum1 = num1.doubleValue(); //실수형으로 변환
+        double dnum2 = num2.doubleValue();
         double result;
 
         switch (operator) {
-            case ADD -> result = operand1 + operand2;
-            case SUBTRACT -> result = operand1 - operand2;
-            case MULTIPLY -> result = operand1 * operand2;
+            case ADD -> result = dnum1 + dnum2;
+            case SUBTRACT -> result = dnum1 - dnum2;
+            case MULTIPLY -> result = dnum1 * dnum2;
             case DIVIDE -> {
-                if (operand2 == 0) {
+                if (dnum2 == 0) {
                     throw new ArithmeticException("0으로 나눌 수 없습니다.");
                 }
-                result = operand1 / operand2;
+                result = dnum1 / dnum2;
             }
             default -> throw new IllegalArgumentException("잘못된 연산자 입니다.");
         }
@@ -42,7 +42,7 @@ public class ArithmeticCalculator<T extends Number> {
     //특정 조건(입력한 값보다 큰 결과 조회)에 맞는 결과 조회 - 람다 스트림
     public List<Double> filterResultsBiggerNum(double value) {
         return results.stream()
-                .filter(result -> result > value) //사용자가 입력한 value값보다 큰 결과값 필터
+                .filter(result -> result > value) //사용자가 입력한 value보다 큰 값 필터
                 .collect(Collectors.toList()); //collect 메서드 : 결과를 리스트로 수집
     }
 }
