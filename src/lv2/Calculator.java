@@ -5,7 +5,7 @@ import java.util.LinkedList;
 public class Calculator {
     private final LinkedList<Integer> linkedList = new LinkedList<>();
 
-    public int calculate(int num1, int num2, String operator) { //수정 불가
+    public int calculate(int num1, int num2, String operator) {
         int result = 0;
 
         switch (operator) {
