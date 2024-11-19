@@ -5,7 +5,7 @@ import java.util.*;
 public class CalculatorApp {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Calculator calculator = new Calculator();
+        Calculator calculator = new Calculator(); //생성자가 Calculator
 
         while (true) {
             System.out.println("계산을 시작하시겠습니까? Yes or No : ");

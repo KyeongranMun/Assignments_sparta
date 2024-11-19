@@ -3,6 +3,7 @@ package lv3;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
+//decimalFormat을 어디에 써야할까
 
 public class ArithmeticCalculator<T extends Number> {
     private final LinkedList<Double> results = new LinkedList<>();
@@ -37,7 +38,7 @@ public class ArithmeticCalculator<T extends Number> {
     }
     //기록 조회 getter메서드
     public List<Double> getHistory() {
-        return List.copyOf(results);
+        return List.copyOf(results); //얕은 복사로 배열 전체를 복사, 컬렉션에 함부로 접근 불가
     }
     //특정 조건(입력한 값보다 큰 결과 조회)에 맞는 결과 조회 - 람다 스트림
     public List<Double> filterResultsBiggerNum(double value) {
